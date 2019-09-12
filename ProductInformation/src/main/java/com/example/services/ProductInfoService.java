@@ -11,7 +11,7 @@ public class ProductInfoService {
 
 	@RequestMapping("/{productId}") 
 	public ProductInfo getProductInfo(@PathVariable("productId") String productId) {
-		return new ProductInfo(productId, "HRX Shoes");
+		return new ProductInfo(productId, "HRX by Hrithik Roshan Grey Synthetic Regular Running");
 	}	
 	
 }
