@@ -26,8 +26,8 @@ public class Products {
      UserReviewList reviews = restTemplate.getForObject("http://PRODUCT-USER-REVIEW/reviewservice/" + userId, UserReviewList.class);
      
      return reviews.getUserReview().stream().map(review -> {
-			ProductInfo productInfo= restTemplate.getForObject("http://PRODUCT-INFORMATION/productinfoservice/" + review.getProductId(), ProductInfo.class);
-			return new ProductDetails(productInfo.getProductId(),productInfo.getProductName(),review.getUserRating());
+			ProductInfo productInfo= restTemplate.getForObject("http://PRODUCT-INFORMATION/productinfoservice/" + review.getProductName(), ProductInfo.class);
+			return new ProductDetails(productInfo.getProductId(),productInfo.getProductName(),review.getPrice());
 		 }).collect(Collectors.toList());	
 		
 	}
