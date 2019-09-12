@@ -2,30 +2,30 @@ package com.example.models;
 
 public class UserReview {
 	
-	private String productId;
-	private String userRating;
+	private String productName;
+	private String price;
 	
 	public UserReview() {}
 	
-	public UserReview(String productId, String userRating) {
+	public UserReview(String productName, String price) {
 		super();
-		this.productId = productId;
-		this.userRating = userRating;
+		this.productName = productName;
+		this.price = price;
 	}
 
-	public String getProductId() {
-		return productId;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProductId(String productId) {
-		this.productId = productId;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getUserRating() {
-		return userRating;
+	public String getPrice() {
+		return price;
 	}
 
-	public void setUserRating(String userRating) {
-		this.userRating = userRating;
-	}
+	public void setPrice(String price) {
+		this.price = price;
+	}	
 }
