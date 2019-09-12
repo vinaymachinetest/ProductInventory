@@ -22,7 +22,7 @@ public class UserReviewService {
 	
 	@RequestMapping("/{userId}") 
 	public UserReviewList getUserReview(@PathVariable("userId") String productId) {
-		List<UserReview> reviews=Arrays.asList(new UserReview("100012","Product is nice"));
+		List<UserReview> reviews=Arrays.asList(new UserReview("HRX shoes","1000"));
 		
 		UserReviewList userReviewList=new UserReviewList();
 		userReviewList.setUserReview(reviews);
