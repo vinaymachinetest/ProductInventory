@@ -23,10 +23,10 @@ public class Products {
 	@RequestMapping("/{userId}") 
 	public List<ProductDetails> getProductDetails(@PathVariable("userId") String userId) {
 		
-     UserReviewList reviews = restTemplate.getForObject("http://product-user-review/reviewservice/"+userId, UserReviewList.class);
+     UserReviewList reviews = restTemplate.getForObject("http://PRODUCT-USER-REVIEW/reviewservice/" + userId, UserReviewList.class);
      
      return reviews.getUserReview().stream().map(review -> {
-			ProductInfo productInfo= restTemplate.getForObject("http://product-information/productinfoservice/"+review.getProductId(), ProductInfo.class);
+			ProductInfo productInfo= restTemplate.getForObject("http://PRODUCT-INFORMATION/productinfoservice/" + review.getProductId(), ProductInfo.class);
 			return new ProductDetails(productInfo.getProductId(),productInfo.getProductName(),review.getUserRating());
 		 }).collect(Collectors.toList());	
 		
